@@ -24,6 +24,7 @@ Example Playbook
 ----------------
 
 ### TODO
+
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
@@ -33,8 +34,14 @@ Including an example of how to use your role (for instance, with variables passe
 Notes
 -----
 
-### TODO
-To use this role by itself, use this command: `hello`
+To use this role by itself for simply runs or for testing, use this command: [1][01]
+
+```sh
+cd .. # Go to the root of the roles, but this needs to be done outside the role root
+ansible localhost -m include_role -a name=NAME_OF_ROLE # this executes the role
+cd - # go back to the previous location
+```
+
 
 License
 -------
@@ -46,3 +53,10 @@ Author Information
 
 ### TODO
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
+References
+----------
+
+1. [Stack Overflow: Executing single roles][01]
+
+01: http://bit.ly/2G1T0QE "Stack Overflow: Executing single roles"
