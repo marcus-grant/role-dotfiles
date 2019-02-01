@@ -1,2 +1,19 @@
+# TODO eventually dotfiles repo will be split
+# TODO consider including XDG Xauthority and the like
+# TODO instead of these complicated steps, use agent forwarding and only use the ssh link to the repo
+# TODO: Bash should be in here since it's an env thing & is needed before installing things like go/rust/nvm/npm/node
 ---
-# tasks file for dotfiles
+- import_tasks: dotfiles.yml
+  when: dotfiles.enable == True
+
+
+- import_tasks: go.yml
+  when: env.code.go.enable == true
+
+
+- import_tasks: fzf.yml
+  when: env.tools.fzf.enable == true
+
+
+- import_tasks: rustup.yml
+  when: env.code.rust.enable == true

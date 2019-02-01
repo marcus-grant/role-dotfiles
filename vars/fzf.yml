@@ -1,0 +1,3 @@
+---
+url: "https://github.com/junegunn/fzf/archive/{{ env.tools.fzf.version }}.tar.gz"
+

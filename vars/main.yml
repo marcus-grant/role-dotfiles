@@ -1,2 +1,2 @@
 ---
-# vars file for dotfiles
+go_download_url: "https://storage.googleapis.com/golang/{{ env.code.go.tarball }}"

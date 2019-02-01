@@ -1,0 +1,46 @@
+---
+# TODO configure the environment vars to change location
+# details here https://bit.ly/2G7fjnl
+- name: Get facts about cargo
+  become: true
+  become_method: "{{ users.become_method }}"
+  become_user: "{{ users.main }}"
+  stat:
+    path: "{{ env.code.rust.cargo.path }}/bin/cargo"
+  register: cargo_exists
+  changed_when: false
+
+# ===== execute this only when we don't have cargo installed ====
+- block:
+
+  - name: Create cargo directory
+    become: true
+    become_method: "{{ users.become_method }}"
+    become_user: "{{ users.main }}"
+    file:
+      path: "{{ env.code.rust.cargo.path }}"
+      state: directory
+      mode: 0755
+
+  - name: Download rustup.sh
+    become: true
+    become_method: "{{ users.become_method }}"
+    become_user: "{{ users.main }}"
+    get_url:
+      url: https://sh.rustup.rs
+      dest: "{{ env.code.rust.cargo.path }}"
+      mode: 0755
+
+
+  - name: Run rustup-init.sh from download
+    become: true
+    become_method: "{{ users.become_method }}"
+    become_user: "{{ users.main }}"
+    command:
+    args:
+      argv:
+        - ~/.cargo/rustup-init.sh
+        - --no-modify-path
+        - -y
+
+  when: not cargo_exists.stat.exists
