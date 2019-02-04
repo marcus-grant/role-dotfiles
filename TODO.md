@@ -42,9 +42,9 @@ Future
 Completed
 =========
 
-- [x] Create filtered repo for neovim dotfiles
-- [x] Update clone repos task to clone neovim properly
-- [x] Create `link_neovim_dotfiles` task
+- [x] Create filtered repo for neovim dotfiles `#f94f98f`
+- [x] Update clone repos task to clone neovim properly `f94f98f`
+- [x] Create `link_neovim_dotfiles` task `f94f98f`
 - [x] Create bash dotfiles linker task `eb3f8fb`
 - [x] Modify `clone_dotfiles.yml` use independant & default vars `3599318`
 - [x] Modify `clone_dotfiles.yml` use `prepare_remote_dotfiles.yml` `3599318`
