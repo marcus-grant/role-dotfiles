@@ -6,6 +6,7 @@
 
 # Setup an execution block to skip incase the dotfile is already there
 - name: Ensure dotfile is present & remote & dirname correct
+  when: not repo_subdir_present.stat.exists
   block:
     - name: 'Clone dotfiles repo "{{ repo.remote }}"'
       become: true
@@ -36,7 +37,8 @@
         git remote set-url origin
         "git@github.com:{{dotfiles_remote_user}}/{{repo.remote}}.git"
       args:
-        chdir: "{{ dotfiles_root_path }}"
-      when: '"git@github.com" not in dot_remote.stdout'
+        chdir: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}"
+      # when: git@github.com not in dot_remote.stdout
+
+    - debug: msg="{{dotfiles_root_path}}/{{repo.local_subdir}}"
   
-  when: not repo_subdir_present.stat.exists

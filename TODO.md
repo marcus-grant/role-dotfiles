@@ -43,8 +43,8 @@ Future
 Completed
 =========
 
-- [x] Create NVM install tasks
-- [x] Create user-local node install task using nvm
+- [x] Create NVM install tasks `0d1eb35`
+- [x] Create user-local node install task using nvm `0d1eb35`
 - [x] Create filtered repo for neovim dotfiles `#f94f98f`
 - [x] Update clone repos task to clone neovim properly `f94f98f`
 - [x] Create `link_neovim_dotfiles` task `f94f98f`
