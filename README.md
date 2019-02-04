@@ -38,7 +38,9 @@ To use this role by itself for simply runs or for testing, use this command: [1]
 
 ```sh
 cd .. # Go to the root of the roles, but this needs to be done outside the role root
-ansible localhost -m include_role -a name=NAME_OF_ROLE # this executes the role
+# this executes the role
+ansible localhost -m include_role -a name=NAME_OF_ROLE \
+--extra-vars dotfiles_user=USERNAME
 cd - # go back to the previous location
 ```
 

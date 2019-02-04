@@ -1,0 +1,37 @@
+---
+- name: Get fact dotfiles path
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    path: "{{ dotfiles_root_path }}"
+    state: directory
+    mode: 0755
+
+
+  # TODO give this xdg pathing when the proper roles for it exists
+- name: Get facts about XDG_DATA_DIR
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    path: "{{ xdg_data_dir }}"
+    state: directory
+    mode: 0755
+
+
+  # TODO give this xdg pathing when the proper roles for it exists
+- name: Check if XDG_CONFIG_DIR if not present
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    path: "{{ xdg_config_dir }}"
+    state: directory
+    mode: 0755
+
+- include_tasks: prepare_remote_dotfiles.yml
+  with_items:
+    - { remote: dots-bash, local_subdir: dots-bash }
+  loop_control:
+    loop_var: repo

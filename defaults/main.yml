@@ -1,2 +1,8 @@
 ---
 # defaults file for dotfiles
+dotfiles_root_path: "~/.dots"
+dotfiles_active_branch: master
+dotfiles_remote_user: marcus-grant
+dotfiles_should_update: true
+xdg_data_dir: "~/.local/share"
+xdg_config_dir: "~/.config"

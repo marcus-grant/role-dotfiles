@@ -1,0 +1,42 @@
+---
+- name: "Check if dotfiles {{ repo.local_subdir }} already present"
+  stat:
+    path: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}"
+  register: repo_subdir_present
+
+# Setup an execution block to skip incase the dotfile is already there
+- name: Ensure dotfile is present & remote & dirname correct
+  block:
+    - name: 'Clone dotfiles repo "{{ repo.remote }}"'
+      become: true
+      become_method: sudo
+      become_user: "{{ dotfiles_user }}"
+      git:
+        repo: "https://github.com/{{dotfiles_remote_user}}/{{repo.remote}}.git"
+        dest: "{{ dotfiles_root_path }}"
+        update: "{{ dotfiles_should_update }}"
+        version: "{{ dotfiles_active_branch }}"
+
+    - name: Get fact for dotfiles remote
+      become: true
+      become_method: sudo
+      become_user: "{{ dotfiles_user }}"
+      shell: echo $(git remote -v)
+      args: { chdir: "{{ dotfiles_root_path }}" }
+      register: dot_remote
+      ignore_errors: true
+      changed_when: false
+
+
+    - name: Set dotfiles remote to use github ssh uri
+      become: true
+      become_method: sudo
+      become_user: "{{ dotfiles_user }}"
+      shell: >
+        git remote set-url origin
+        "git@github.com:{{dotfiles_remote_user}}/{{repo.remote}}.git"
+      args:
+        chdir: "{{ dotfiles_root_path }}"
+      when: '"git@github.com" not in dot_remote.stdout'
+  
+  when: not repo_subdir_present.stat.exists
