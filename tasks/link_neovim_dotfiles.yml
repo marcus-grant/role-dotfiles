@@ -1,0 +1,10 @@
+---
+- name: Link neovim dotfiles directory to expected location
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    state: link
+    src: "{{ nvim_dotfiles_root_path }}"
+    dest: "{{ xdg_config_dir }}/nvim"
+    force: true

@@ -1,0 +1,30 @@
+---
+- name: Link prompt-link alias for specifying prompt style
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    state: link
+    src: "{{ bash_dotfiles_root_path }}/prompts/bash-powerline.sh"
+    dest: "{{ bash_dotfiles_root_path }}/prompts/prompt-link"
+    force: true
+
+- name: Link bashrc to expected location
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    state: link
+    src: "{{ bash_dotfiles_root_path }}/{{ bash_dotfiles_bashrc }}"
+    dest: ~/.bashrc
+    force: true
+
+- name: Link bash_profile to expected location
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    state: link
+    src: "{{ bash_dotfiles_root_path }}/{{ bash_dotfiles_bash_profile }}"
+    dest: ~/.bash_profile
+    force: true
