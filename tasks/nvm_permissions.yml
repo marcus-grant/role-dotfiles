@@ -1,0 +1,9 @@
+---
+- name: NVM | permission | update nvm dir permission
+  file:
+    path: "{{ nvm_dest }}"
+    group: "{{ dotfiles_user }}"
+    owner: "{{ dotfiles_user }}"
+    mode: 0755
+    recurse: yes
+    state: directory

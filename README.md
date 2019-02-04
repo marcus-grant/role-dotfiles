@@ -60,5 +60,7 @@ References
 ----------
 
 1. [Stack Overflow: Executing single roles][01]
+2. [Github: moviedo/ansible-role-vnm][02]
 
 01: http://bit.ly/2G1T0QE "Stack Overflow: Executing single roles"
+02: http://bit.ly/2G5Z8Hy "Github: moviedo/ansible-role-vnm"

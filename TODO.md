@@ -16,6 +16,7 @@ TODOs
 - [ ] Make go env setup work
     - double check the order of tasks here
 - [ ] Make rustup env setup work
+- [ ] Make sure $GOROOT is addressed in go install to root
 - [ ] Make fzf env setup work
 - [ ] Create proper role metadata
 - [ ] Add task to prepare_remote_dots to change installed directory
@@ -42,6 +43,8 @@ Future
 Completed
 =========
 
+- [x] Create NVM install tasks
+- [x] Create user-local node install task using nvm
 - [x] Create filtered repo for neovim dotfiles `#f94f98f`
 - [x] Update clone repos task to clone neovim properly `f94f98f`
 - [x] Create `link_neovim_dotfiles` task `f94f98f`

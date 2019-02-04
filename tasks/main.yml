@@ -21,6 +21,21 @@
     - dotfiles
     - neovim
 
+- import_tasks: nvm.yml
+  tags:
+    - dev_env
+    - nvm
+
+- include: nvm_permissions.yml
+  tags:
+    - dev_env
+    - nvm
+
+- import_tasks: node.yml
+  tags:
+    - dev_env
+    - node
+
 
 
 # TODO handle these later

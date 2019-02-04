@@ -29,6 +29,21 @@ enable_neovim: true
 nvim_aliased_as_vim: false
 nvim_dotfiles_dir_name: dots-neovim
 
+###
+### Env configs
+###
+
+# nvm
+nvm_add_path_to_bashrc: false
+nvm_version: "v0.34.0"
+nvm_node_version: "11.9.0"
+nvm_working_path: "/home/{{ dotfiles_user }}"
+nvm_dest: "{{ nvm_working_path }}/.local/share/nvm"
+nvm_npm_init_pkgs: []
+# nvm_required_packages: # TODO git curl libssl-dev necessary?
+  
+
+
 
 # computed variables DO NOT CHANGE THESE
 # TODO bash dotfiles should be able to work without prompt link
