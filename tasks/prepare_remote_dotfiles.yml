@@ -13,7 +13,7 @@
       become_user: "{{ dotfiles_user }}"
       git:
         repo: "https://github.com/{{dotfiles_remote_user}}/{{repo.remote}}.git"
-        dest: "{{ dotfiles_root_path }}"
+        dest: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}"
         update: "{{ dotfiles_should_update }}"
         version: "{{ dotfiles_active_branch }}"
 
@@ -22,7 +22,7 @@
       become_method: sudo
       become_user: "{{ dotfiles_user }}"
       shell: echo $(git remote -v)
-      args: { chdir: "{{ dotfiles_root_path }}" }
+      args: { chdir: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}" }
       register: dot_remote
       ignore_errors: true
       changed_when: false

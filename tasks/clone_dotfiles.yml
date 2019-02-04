@@ -32,6 +32,6 @@
 
 - include_tasks: prepare_remote_dotfiles.yml
   with_items:
-    - { remote: dots-bash, local_subdir: dots-bash }
+    - { remote: dots-bash, local_subdir: "{{ bash_dotfiles_dir_name }}" }
   loop_control:
     loop_var: repo

@@ -4,8 +4,13 @@
 # TODO: Bash should be in here since it's an env thing & is needed before installing things like go/rust/nvm/npm/node
 ---
 - import_tasks: clone_dotfiles.yml
+  tags:
+    - dotfiles
 
 - import_tasks: link_bash_dotfiles.yml
+  tags:
+    - dotfiles
+    - bash
 
 # TODO handle these later
 # - import_tasks: go.yml

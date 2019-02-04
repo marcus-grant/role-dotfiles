@@ -4,5 +4,21 @@ dotfiles_root_path: "~/.dots"
 dotfiles_active_branch: master
 dotfiles_remote_user: marcus-grant
 dotfiles_should_update: true
+
+# env stuff, might need removing in future
 xdg_data_dir: "~/.local/share"
 xdg_config_dir: "~/.config"
+
+# dotfile set specific variables
+enable_bash_dotfiles: true
+bash_dotfiles_dir_name: dots-bash
+bash_dotfiles_prompt_name: bash-powerline.sh
+bash_dotfiles_bashrc: bashrc
+bash_dotfiles_bash_profile: bash_profile
+
+
+# computed variables DO NOT CHANGE THESE
+# TODO bash dotfiles should be able to work without prompt link
+# ... have an enabler variable in place
+bash_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ bash_dotfiles_dir_name }}"
+
