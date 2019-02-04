@@ -1,9 +1,6 @@
 TODOs
 =====
 
-- [ ] Modify the role to be self contained with defaults
-  - [x] Modify `clone_dotfiles.yml` use independant & default vars `3599318`
-- [ ] Create bash dotfiles linker task
 - [ ] Create proper role metadata
 - [ ] Create filtered repo for vim dotfiles
 - [ ] Create filtered repo for tmux dotfiles
@@ -30,6 +27,8 @@ Future
 Completed
 =========
 
+- [x] Create bash dotfiles linker task `eb3f8fb`
+- [x] Modify `clone_dotfiles.yml` use independant & default vars `3599318`
 - [x] Modify `clone_dotfiles.yml` use `prepare_remote_dotfiles.yml` `3599318`
     - A list of dictionaries representing info for each dotfiles set
 - [x] Create filtered repo for bash dotfiles
