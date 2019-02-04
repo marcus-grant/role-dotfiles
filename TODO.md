@@ -2,9 +2,7 @@ TODOs
 =====
 
 - [ ] Modify the role to be self contained with defaults
-  - [x] Modify `dotfiles.yml` task to use independant & default vars
-- [x] Modify `dotfiles.yml` to use `prepare_remote_dotfiles.yml`
-    - A list of dictionaries representing info for each dotfiles set
+  - [x] Modify `clone_dotfiles.yml` use independant & default vars `3599318`
 - [ ] Create proper role metadata
 - [ ] Create filtered repo for vim dotfiles
 - [ ] Create filtered repo for tmux dotfiles
@@ -28,6 +26,8 @@ Future
 Completed
 =========
 
+- [x] Modify `clone_dotfiles.yml` use `prepare_remote_dotfiles.yml` `3599318`
+    - A list of dictionaries representing info for each dotfiles set
 - [x] Create filtered repo for bash dotfiles
 - [x] Write about executing single role for testing or execution `4bdd902`
 - [x] Figure out how to execute a single role for testing `4bdd902`
