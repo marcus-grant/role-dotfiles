@@ -4,3 +4,7 @@ hosts.yml
 # This is the roles file that gets ignored, but
 # is used in testing to make testing this role easier
 test_roles.yml
+*.retry
+
+# This is for people that prefer a secrets file to store passwords
+secrets

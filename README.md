@@ -50,6 +50,33 @@ cd .. && ansible localhost -m include_role -a name=dotfiles --extra-vars dotfile
 
 - This will move back a dir then run the test command and then go back again
 
+- Also it's possible to create a `test_roles.yml` file, which this repo ignores through the `.gitignore` file that tests the role as if it was part of an actual playbook.
+
+`./test_roles.yml`:
+```yml
+---
+- hosts: localhost
+  become: yes
+  become_user: "{{ dotfiles_user }}"
+  vars:
+    dotfiles_user: marcus
+  roles:
+    - { role: ../dotfiles, tags: test_role }
+```
+
+- Then create a test inventory file, this repo already ignores `hosts.yml` and fill it with the hosts information needed to test this role.
+
+```yml
+all:
+  hosts: localhost
+```
+
+- And finally the ansible command to run this simply becomes:
+
+```sh
+ansible-playbook -i hosts test_roles.yml
+```
+
 License
 -------
 
