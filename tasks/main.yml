@@ -2,24 +2,24 @@
 # TODO instead of these complicated steps, use agent forwarding and only use the ssh link to the repo
 # TODO: Bash should be in here since it's an env thing & is needed before installing things like go/rust/nvm/npm/node
 ---
-- import_tasks: clone_dotfiles.yml
-  tags:
-    - dotfiles
-
-- import_tasks: link_bash_dotfiles.yml
-  tags:
-    - dotfiles
-    - bash
-
-- import_tasks: link_vim_dotfiles.yml
-  tags:
-    - dotfiles
-    - vim
-
-- import_tasks: link_neovim_dotfiles.yml
-  tags:
-    - dotfiles
-    - neovim
+# - import_tasks: clone_dotfiles.yml
+#   tags:
+#     - dotfiles
+#
+# - import_tasks: link_bash_dotfiles.yml
+#   tags:
+#     - dotfiles
+#     - bash
+#
+# - import_tasks: link_vim_dotfiles.yml
+#   tags:
+#     - dotfiles
+#     - vim
+#
+# - import_tasks: link_neovim_dotfiles.yml
+#   tags:
+#     - dotfiles
+#     - neovim
 
 - import_tasks: nvm.yml
   tags:

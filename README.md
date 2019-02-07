@@ -44,6 +44,11 @@ ansible localhost -m include_role -a name=NAME_OF_ROLE \
 cd - # go back to the previous location
 ```
 
+```sh
+cd .. && ansible localhost -m include_role -a name=dotfiles --extra-vars dotfiles_user=marcus; cd -
+```
+
+- This will move back a dir then run the test command and then go back again
 
 License
 -------

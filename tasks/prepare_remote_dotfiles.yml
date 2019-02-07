@@ -15,7 +15,8 @@
       git:
         repo: "https://github.com/{{dotfiles_remote_user}}/{{repo.remote}}.git"
         dest: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}"
-        update: "{{ dotfiles_should_update }}"
+        # update: "{{ dotfiles_should_update }}"
+        update: false
         version: "{{ dotfiles_active_branch }}"
 
     - name: Get fact for dotfiles remote

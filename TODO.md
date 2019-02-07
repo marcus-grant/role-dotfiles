@@ -10,14 +10,20 @@ TODOs
 - [ ] Create filtered repo for alacritty dotfiles
 - [ ] Update clone repos task to clone alacritty properly
 - [ ] Create `link_alacritty_dotfiles` task
-- [ ] Create filtered repo for i3 dotfiles
-- [ ] Update clone repos task to clone i3 properly
-- [ ] Create `link_i3_dotfiles` task
+- [ ] Python environment from jord playbook with pip & pynvim
+- [ ] Consider installing a global node package for the host
 - [ ] Make go env setup work
     - double check the order of tasks here
 - [ ] Make rustup env setup work
 - [ ] Make sure $GOROOT is addressed in go install to root
 - [ ] Make fzf env setup work
+- [ ] Create filtered repo for i3 dotfiles
+- [ ] Update clone repos task to clone i3 properly
+- [ ] Create `link_i3_dotfiles` task
+- [ ] Consider a task to install base env npm utils like:
+    - [ ] tern
+    - [ ] webpack
+    - [ ] create-react-app
 - [ ] Create proper role metadata
 - [ ] Add task to prepare_remote_dots to change installed directory
 - [ ] Change `prepare_remote_dotfiles` to `clone_dotfiles`
