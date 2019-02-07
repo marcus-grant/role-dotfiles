@@ -29,6 +29,10 @@ enable_neovim: true
 nvim_aliased_as_vim: false
 nvim_dotfiles_dir_name: dots-neovim
 
+# tmux
+enable_tmux: true
+tmux_dotfiles_dir_name: dots-tmux
+
 ###
 ### Env configs
 ###
@@ -51,3 +55,5 @@ nvm_npm_init_pkgs: []
 bash_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ bash_dotfiles_dir_name }}"
 
 nvim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ nvim_dotfiles_dir_name }}"
+
+tmux_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ tmux_dotfiles_dir_name }}"

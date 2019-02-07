@@ -34,5 +34,6 @@
   with_items:
     - { remote: dots-bash, local_subdir: "{{ bash_dotfiles_dir_name }}" }
     - { remote: dots-neovim, local_subdir: "{{ nvim_dotfiles_dir_name }}" }
+    - { remote: dots-tmux, local_subdir: "{{ tmux_dotfiles_dir_name }}" }
   loop_control:
     loop_var: repo

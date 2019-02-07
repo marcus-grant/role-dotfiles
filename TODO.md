@@ -1,9 +1,6 @@
 TODOs
 =====
 
-- [ ] Create filtered repo for tmux dotfiles
-- [ ] Update clone repos task to clone tmux properly
-- [ ] Create `link_tmux_dotfiles` task
 - [ ] Create filtered repo for vim dotfiles
 - [ ] Update clone repos task to clone vim properly
 - [ ] Create `link_vim_dotfiles` task
@@ -20,6 +17,7 @@ TODOs
 - [ ] Create filtered repo for i3 dotfiles
 - [ ] Update clone repos task to clone i3 properly
 - [ ] Create `link_i3_dotfiles` task
+- [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Consider a task to install base env npm utils like:
     - [ ] tern
     - [ ] webpack
@@ -31,6 +29,9 @@ TODOs
 - [ ] Write about using these variables for own installs in README
 - [ ] Write about how to execute a role in post
 - [ ] Fix dotfiles_prepare to properly detect presence & skip
+- [ ] Give `clone_dotfiles` variables for defining `remote` through vars
+- [ ] Create reusable linker task that takes src/dst vars to link many
+    - [ ] create linker task that uses the above with a list to link all
 
 Future
 ======
@@ -49,6 +50,10 @@ Future
 Completed
 =========
 
+
+- [x] Create filtered repo for tmux dotfiles
+- [x] Update clone repos task to clone tmux properly
+- [x] Create `link_tmux_dotfiles` task
 - [x] Create NVM install tasks `0d1eb35`
 - [x] Create user-local node install task using nvm `0d1eb35`
 - [x] Create filtered repo for neovim dotfiles `#f94f98f`
