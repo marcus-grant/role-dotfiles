@@ -1,2 +1,6 @@
 # Hosts file only used for testing
-hosts
+hosts.yml
+
+# This is the roles file that gets ignored, but
+# is used in testing to make testing this role easier
+test_roles.yml
