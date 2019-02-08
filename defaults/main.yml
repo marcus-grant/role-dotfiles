@@ -24,10 +24,15 @@ bash_dotfiles_prompt_name: bash-powerline.sh
 bash_dotfiles_bashrc: bashrc
 bash_dotfiles_bash_profile: bash_profile
 
+# vim
+enable_vim: true
+vim_dotfiles_dir_name: dots-vim
+
 # neovim
 enable_neovim: true
 nvim_aliased_as_vim: false
 nvim_dotfiles_dir_name: dots-neovim
+
 
 # tmux
 enable_tmux: true
@@ -53,6 +58,8 @@ nvm_npm_init_pkgs: []
 # TODO bash dotfiles should be able to work without prompt link
 # ... have an enabler variable in place
 bash_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ bash_dotfiles_dir_name }}"
+
+vim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ vim_dotfiles_dir_name }}"
 
 nvim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ nvim_dotfiles_dir_name }}"
 

@@ -1,9 +1,6 @@
 TODOs
 =====
 
-- [ ] Create filtered repo for vim dotfiles
-- [ ] Update clone repos task to clone vim properly
-- [ ] Create `link_vim_dotfiles` task
 - [ ] Create filtered repo for alacritty dotfiles
 - [ ] Update clone repos task to clone alacritty properly
 - [ ] Create `link_alacritty_dotfiles` task
@@ -51,9 +48,12 @@ Completed
 =========
 
 
-- [x] Create filtered repo for tmux dotfiles
-- [x] Update clone repos task to clone tmux properly
-- [x] Create `link_tmux_dotfiles` task
+- [x] Create filtered repo for vim dotfiles
+- [x] Update clone repos task to clone vim properly
+- [x] Create `link_vim_dotfiles` task
+- [x] Create filtered repo for tmux dotfiles `565f3c2`
+- [x] Update clone repos task to clone tmux properly `565f3c2`
+- [x] Create `link_tmux_dotfiles` task `565f3c2`
 - [x] Create NVM install tasks `0d1eb35`
 - [x] Create user-local node install task using nvm `0d1eb35`
 - [x] Create filtered repo for neovim dotfiles `#f94f98f`
