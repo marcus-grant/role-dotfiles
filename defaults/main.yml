@@ -20,23 +20,31 @@ xdg_config_dir: "~/.config"
 # bash
 enable_bash_dotfiles: true
 bash_dotfiles_dir_name: dots-bash
+bash_repo_name: dots-bash
 bash_dotfiles_prompt_name: bash-powerline.sh
 bash_dotfiles_bashrc: bashrc
 bash_dotfiles_bash_profile: bash_profile
 
 # vim
 enable_vim: true
+vim_repo_name: dots-vim
 vim_dotfiles_dir_name: dots-vim
 
 # neovim
 enable_neovim: true
 nvim_aliased_as_vim: false
+nvim_repo_name: dots-neovim
 nvim_dotfiles_dir_name: dots-neovim
-
 
 # tmux
 enable_tmux: true
+tmux_repo_name: dots-tmux
 tmux_dotfiles_dir_name: dots-tmux
+
+# alacritty
+enable_alacritty: true
+alacritty_repo_name: dots-alacritty
+alacritty_dotfiles_dir_name: dots-alacritty
 
 ###
 ### Env configs
@@ -64,3 +72,5 @@ vim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ vim_dotfiles_dir_name }}"
 nvim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ nvim_dotfiles_dir_name }}"
 
 tmux_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ tmux_dotfiles_dir_name }}"
+
+alacritty_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ alacritty_dotfiles_dir_name }}"

@@ -1,7 +1,7 @@
 TODOs
 =====
 
-- [ ] Create filtered repo for alacritty dotfiles
+- [x] Create filtered repo for alacritty dotfiles
 - [ ] Update clone repos task to clone alacritty properly
 - [ ] Create `link_alacritty_dotfiles` task
 - [ ] Python environment from jord playbook with pip & pynvim
@@ -48,9 +48,9 @@ Completed
 =========
 
 
-- [x] Create filtered repo for vim dotfiles
-- [x] Update clone repos task to clone vim properly
-- [x] Create `link_vim_dotfiles` task
+- [x] Create filtered repo for vim dotfiles `be9c32e`
+- [x] Update clone repos task to clone vim properly `be9c32e`
+- [x] Create `link_vim_dotfiles` task `be9c32e`
 - [x] Create filtered repo for tmux dotfiles `565f3c2`
 - [x] Update clone repos task to clone tmux properly `565f3c2`
 - [x] Create `link_tmux_dotfiles` task `565f3c2`

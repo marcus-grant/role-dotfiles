@@ -32,9 +32,10 @@
 
 - include_tasks: prepare_remote_dotfiles.yml
   with_items:
-    - { remote: dots-bash, local_subdir: "{{ bash_dotfiles_dir_name }}" }
-    - { remote: dots-vim, local_subdir: "{{ vim_dotfiles_dir_name }}" }
+    # - { remote: dots-bash, local_subdir: "{{ bash_dotfiles_dir_name }}" }
+    # - { remote: dots-vim, local_subdir: "{{ vim_dotfiles_dir_name }}" }
     # - { remote: dots-neovim, local_subdir: "{{ nvim_dotfiles_dir_name }}" }
     # - { remote: dots-tmux, local_subdir: "{{ tmux_dotfiles_dir_name }}" }
+    - { remote: "{{ alacritty_repo_name }}", local_subdir: "{{ alacritty_dotfiles_dir_name }}" }
   loop_control:
     loop_var: repo

@@ -1,0 +1,10 @@
+---
+- name: Link alacritty directory to expected location
+  become: true
+  become_method: sudo
+  become_user: "{{ dotfiles_user }}"
+  file:
+    state: link
+    src: "{{ alacritty_dotfiles_root_path }}"
+    dest: ~/.config/alacritty
+    force: true

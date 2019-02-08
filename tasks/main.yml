@@ -11,10 +11,10 @@
 #     - dotfiles
 #     - bash
 
-- import_tasks: link_vim_dotfiles.yml
-  tags:
-    - dotfiles
-    - vim
+# - import_tasks: link_vim_dotfiles.yml
+#   tags:
+#     - dotfiles
+#     - vim
 
 # - import_tasks: link_neovim_dotfiles.yml
 #   tags:
@@ -24,7 +24,12 @@
 # - import_tasks: link_tmux_dotfiles.yml
 #   tags:
 #     - dotfiles
-#     - neovim
+#     - tmux
+#
+# - import_tasks: link_alacritty_dotfiles.yml
+#   tags:
+#     - dotfiles
+#     - alacritty
 
 # - import_tasks: nvm.yml
 #   tags:
