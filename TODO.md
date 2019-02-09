@@ -1,11 +1,7 @@
 TODOs
 =====
 
-- [x] Create filtered repo for alacritty dotfiles
-- [ ] Update clone repos task to clone alacritty properly
-- [ ] Create `link_alacritty_dotfiles` task
 - [ ] Python environment from jord playbook with pip & pynvim
-- [ ] Consider installing a global node package for the host
 - [ ] Make go env setup work
     - double check the order of tasks here
 - [ ] Make rustup env setup work
@@ -15,10 +11,6 @@ TODOs
 - [ ] Update clone repos task to clone i3 properly
 - [ ] Create `link_i3_dotfiles` task
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
-- [ ] Consider a task to install base env npm utils like:
-    - [ ] tern
-    - [ ] webpack
-    - [ ] create-react-app
 - [ ] Create proper role metadata
 - [ ] Add task to prepare_remote_dots to change installed directory
 - [ ] Change `prepare_remote_dotfiles` to `clone_dotfiles`
@@ -33,6 +25,13 @@ TODOs
 Future
 ======
 
+- [ ] Consider installing a global node package for the host
+- [ ] Consider a task to install base env npm utils like:
+    - Will be handled in other role or in jord playbook - followup there.
+    - [ ] tern
+    - [ ] webpack
+    - [ ] create-react-app
+    - This will be handled in other tasks on a per needs basis, follow up in docs of a good place to do so
 - [ ] Look into making default dot root in `~/.config`
     - There may be consequences to some dotfile sets due to this check
 - **Prefix all these remote repos with role-SOMEROLE**
@@ -48,6 +47,9 @@ Completed
 =========
 
 
+- [x] Create filtered repo for alacritty dotfiles `988bfd3`
+- [x] Update clone repos task to clone alacritty properly `988bfd3`
+- [x] Create `link_alacritty_dotfiles` task `988bfd3`
 - [x] Create filtered repo for vim dotfiles `be9c32e`
 - [x] Update clone repos task to clone vim properly `be9c32e`
 - [x] Create `link_vim_dotfiles` task `be9c32e`

@@ -11,6 +11,10 @@
 #     - dotfiles
 #     - bash
 
+- import_tasks: python_env.yml
+  tags:
+    - python
+
 # - import_tasks: link_vim_dotfiles.yml
 #   tags:
 #     - dotfiles
