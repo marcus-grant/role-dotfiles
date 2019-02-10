@@ -13,11 +13,6 @@
   register: gover
   changed_when: false
 
-- debug: msg={{go_download_url}}
-- debug: msg={{go_tarball}}
-- debug: msg={{go_tarball_sha256}}
-- debug: msg={{gover}}
-
 - name: Download go tarball
   get_url:
     url: "{{ go_download_url }}"

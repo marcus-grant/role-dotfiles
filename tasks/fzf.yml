@@ -1,66 +1,45 @@
 ---
 # TODO get these facts right
 - name: Get facts about local FZF if any
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   ignore_errors: true
   stat:
-    path: "{{ env.tools.fzf.root }}/bin/fzf"
+    path: "{{ fzf_root_path }}/bin/fzf"
   register: fzf_exists
   changed_when: false
 
-- name: Include fzf task vars
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
-  include_vars:
-    file: fzf.yml
-    name: fzf
+# - name: Include fzf task vars
+#   include_vars:
+#     file: fzf.yml
+#     name: fzf
 
 # TODO create a proper become for homebrew
 - name: Download fzf tarball
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   unarchive:
-    src: "{{ fzf.url }}"
-    dest: "{{ env.tools.fzf.parent }}"
+    src: "{{ fzf_url }}"
+    dest: "{{ fzf_root_parent }}"
     remote_src: true
-  when: not env.tools.fzf.use_pkg_mgr and not fzf_exists.stat.exists
-
+  when: not fzf_use_pkg_mgr and not fzf_exists.stat.exists
 
 - name: Rename fzf directory
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
-  command: mv "fzf-{{ env.tools.fzf.version }}" fzf
+  command: mv "fzf-{{ fzf_version }}" fzf
   args:
-    chdir: "{{ env.tools.fzf.parent }}"
+    chdir: "{{ fzf_parent }}"
   when: not fzf_exists.stat.exists
 
-
 - name: Modify fzf install script with prefix in vars
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   lineinfile:
-    path: "{{ env.tools.fzf.root }}/install"
+    path: "{{ fzf_root_path }}/install"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   with_items:
-    - { regexp: "^prefix=", line: "prefix='{{ env.tools.fzf.root }}'" }
-    - { regexp: "^prefix_expand=", line: "prefix={{ env.tools.fzf.root }}" }
-
+    - { regexp: "^prefix=", line: "prefix='{{ fzf_root_path }}'" }
+    - { regexp: "^prefix_expand=", line: "prefix={{ fzf_root_path }}" }
 
 - name: Execute fzf install script
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   command:
   args:
     argv:
-      - "{{ env.tools.fzf.root }}/install"
+      - "{{ fzf_root_path }}/install"
       - --xdg
       - --completion
       - --key-bindings

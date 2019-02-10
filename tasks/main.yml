@@ -58,13 +58,15 @@
 
 
 # TODO handle these later
-- import_tasks: go.yml
-  when: go_enable == true
+# - import_tasks: go.yml
+#   when: go_enable
+#   tags: [go, install, env]
 
 
-# - import_tasks: fzf.yml
-#   when: env.tools.fzf.enable == true
-#
-#
+- import_tasks: fzf.yml
+  when: fzf_enable
+  tags: [fzf, cli]
+
+
 # - import_tasks: rustup.yml
 #   when: env.code.rust.enable == true

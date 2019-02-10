@@ -3,7 +3,6 @@ TODOs
 
 - [ ] Make rustup env setup work
 - [ ] Make sure $GOROOT is addressed in go install to root
-- [ ] Make fzf env setup work
 - [ ] Make rustup env setup work
 - [ ] Add cargo installs for fd rg alacritty
 - [ ] Create filtered repo for i3 dotfiles
@@ -52,7 +51,8 @@ Future
 Completed
 =========
 
-- [x] Make go env setup work
+- [x] Make fzf env setup work
+- [x] Make go env setup work `6774a58`
 - [x] Python environment from jord playbook with pip & pynvim `1f8fa61`
 - [x] Create filtered repo for alacritty dotfiles `988bfd3`
 - [x] Update clone repos task to clone alacritty properly `988bfd3`

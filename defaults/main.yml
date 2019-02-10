@@ -60,6 +60,14 @@ go_tarball: go1.11.4.linux-amd64.tar.gz
 go_tarball_sha256: "sha256:fb26c30e6a04ad937bbc657a1b5bba92f80096af1e8ee6da6430c045a8db3a5b"
 go_version_target: "go version go1.11.4 linux/amd64"
 
+# fzf
+fzf_enable: true
+fzf_version: 0.17.5
+fzf_root_parent: "{{ xdg_data_dir }}"
+fzf_root_path: "{{ fzf_root_parent }}/fzf"
+# TODO consider implementing fzf install using pkg.mgr.
+fzf_use_pkg_mgr: false
+
 
 # nvm
 nvm_add_path_to_bashrc: false
