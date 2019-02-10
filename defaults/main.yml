@@ -68,6 +68,9 @@ fzf_root_path: "{{ fzf_root_parent }}/fzf"
 # TODO consider implementing fzf install using pkg.mgr.
 fzf_use_pkg_mgr: false
 
+# rust
+rust_enable: true
+cargo_path: ~/.cargo
 
 # nvm
 nvm_add_path_to_bashrc: false

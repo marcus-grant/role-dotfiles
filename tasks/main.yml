@@ -63,10 +63,11 @@
 #   tags: [go, install, env]
 
 
-- import_tasks: fzf.yml
-  when: fzf_enable
-  tags: [fzf, cli]
+# - import_tasks: fzf.yml
+#   when: fzf_enable
+#   tags: [fzf, cli]
 
 
-# - import_tasks: rustup.yml
-#   when: env.code.rust.enable == true
+- import_tasks: rustup.yml
+  when: rust_enable
+  tags: [rustup, cargo, env, install]

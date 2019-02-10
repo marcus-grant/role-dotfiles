@@ -1,9 +1,6 @@
 TODOs
 =====
 
-- [ ] Make rustup env setup work
-- [ ] Make sure $GOROOT is addressed in go install to root
-- [ ] Make rustup env setup work
 - [ ] Add cargo installs for fd rg alacritty
 - [ ] Create filtered repo for i3 dotfiles
 - [ ] Update clone repos task to clone i3 properly
@@ -32,6 +29,11 @@ Future
     - [ ] webpack
     - [ ] create-react-app
     - This will be handled in other tasks on a per needs basis, follow up in docs of a good place to do so
+- [ ] Consider splitting env setups into their own roles
+    - go
+    - fzf
+    - rustup
+    - cargo install
 - [ ] Look into making default dot root in `~/.config`
     - There may be consequences to some dotfile sets due to this check
 - [ ] improve go install vars
@@ -39,6 +41,7 @@ Future
     - should also only need to look for version & host
 - [ ] Implement go task that sets gopath on `set_go_path` being set
 - [ ] do better check on gobin being populated
+- [ ] Make sure $GOROOT is addressed in go install to root
 - **Prefix all these remote repos with role-SOMEROLE**
 - [ ] Separate Go env into separate VCS'd role
 - [ ] Separate Rustup env into separate VCS'd role
@@ -51,7 +54,8 @@ Future
 Completed
 =========
 
-- [x] Make fzf env setup work
+- [x] Make rustup env setup work
+- [x] Make fzf env setup work `e5ae622`
 - [x] Make go env setup work `6774a58`
 - [x] Python environment from jord playbook with pip & pynvim `1f8fa61`
 - [x] Create filtered repo for alacritty dotfiles `988bfd3`
