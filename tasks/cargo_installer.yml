@@ -1,0 +1,10 @@
+---
+- name: "Check if cargo crate {{ crate.pkg }} is installed"
+  stat:
+    path: "{{cargo_path}}/bin/{{crate.bin}}"
+  register: crate_stat
+  ignore_errors: true
+
+- name: "Install {{ crate.pkg }} using cargo"
+  command: "cargo install {{ crate.pkg }}"
+  when: not crate_stat.stat.exists

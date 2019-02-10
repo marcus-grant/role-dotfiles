@@ -1,7 +1,6 @@
 TODOs
 =====
 
-- [ ] Add cargo installs for fd rg alacritty
 - [ ] Create filtered repo for i3 dotfiles
 - [ ] Update clone repos task to clone i3 properly
 - [ ] Create `link_i3_dotfiles` task
@@ -54,7 +53,8 @@ Future
 Completed
 =========
 
-- [x] Make rustup env setup work
+- [x] Add cargo installs for fd rg ``
+- [x] Make rustup env setup work `04a2871`
 - [x] Make fzf env setup work `e5ae622`
 - [x] Make go env setup work `6774a58`
 - [x] Python environment from jord playbook with pip & pynvim `1f8fa61`

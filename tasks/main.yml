@@ -68,6 +68,10 @@
 #   tags: [fzf, cli]
 
 
-- import_tasks: rustup.yml
+# - import_tasks: rustup.yml
+#   when: rust_enable
+#   tags: [rustup, cargo, env, install]
+
+- import_tasks: rust_dotfiles_utils.yml
   when: rust_enable
-  tags: [rustup, cargo, env, install]
+  tags: [cargo, cli]

@@ -1,0 +1,9 @@
+---
+- name: Install rust cli utilities
+  include_tasks: cargo_installer.yml
+  loop_control:
+    loop_var: crate
+  with_items:
+    - { pkg: fd-find, bin: fd }
+    - { pkg: ripgrep, bin: rg }
+    
