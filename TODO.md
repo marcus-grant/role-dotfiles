@@ -1,12 +1,11 @@
 TODOs
 =====
 
-- [ ] Python environment from jord playbook with pip & pynvim
-- [ ] Make go env setup work
-    - double check the order of tasks here
 - [ ] Make rustup env setup work
 - [ ] Make sure $GOROOT is addressed in go install to root
 - [ ] Make fzf env setup work
+- [ ] Make rustup env setup work
+- [ ] Add cargo installs for fd rg alacritty
 - [ ] Create filtered repo for i3 dotfiles
 - [ ] Update clone repos task to clone i3 properly
 - [ ] Create `link_i3_dotfiles` task
@@ -14,6 +13,8 @@ TODOs
 - [ ] Create proper role metadata
 - [ ] Add task to prepare_remote_dots to change installed directory
 - [ ] Change `prepare_remote_dotfiles` to `clone_dotfiles`
+- [ ] Add pip3 user installs including:
+    - [ ] ansible-lint
 - [ ] Make sure all variables are configurable for other users
 - [ ] Write about using these variables for own installs in README
 - [ ] Write about how to execute a role in post
@@ -34,6 +35,11 @@ Future
     - This will be handled in other tasks on a per needs basis, follow up in docs of a good place to do so
 - [ ] Look into making default dot root in `~/.config`
     - There may be consequences to some dotfile sets due to this check
+- [ ] improve go install vars
+    - version_target should depend on other vars
+    - should also only need to look for version & host
+- [ ] Implement go task that sets gopath on `set_go_path` being set
+- [ ] do better check on gobin being populated
 - **Prefix all these remote repos with role-SOMEROLE**
 - [ ] Separate Go env into separate VCS'd role
 - [ ] Separate Rustup env into separate VCS'd role
@@ -46,7 +52,8 @@ Future
 Completed
 =========
 
-
+- [x] Make go env setup work
+- [x] Python environment from jord playbook with pip & pynvim `1f8fa61`
 - [x] Create filtered repo for alacritty dotfiles `988bfd3`
 - [x] Update clone repos task to clone alacritty properly `988bfd3`
 - [x] Create `link_alacritty_dotfiles` task `988bfd3`

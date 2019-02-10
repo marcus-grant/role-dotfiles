@@ -1,86 +1,49 @@
 ---
 - name: Get facts about GOPATH
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   stat:
-    path: "{{ env.code.go.GOPATH.primary }}"
-  register: gopath_primary
-  changed_when: false
-
-  # TODO give this xdg pathing when the proper roles for it exists
-- name: Get facts about XDG_DATA_DIR
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
-  stat:
-    path: "~/.local/share"
-  register: data_dir
+    path: "{{ go_path_primary }}"
+  register: gopath_primary_tmp_var
   changed_when: false
 
 # TODO also check for populated gopath contents before DL
-# TODO also check version of current if it exists before DL
 
 - name: Get facts about current go version
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
-  command: "{{ env.code.go.GOPATH.primary }}/bin/go version"
+  command: "{{ go_path_primary }}/bin/go version"
   ignore_errors: yes
-  register: go_version
+  register: gover
   changed_when: false
 
+- debug: msg={{go_download_url}}
+- debug: msg={{go_tarball}}
+- debug: msg={{go_tarball_sha256}}
+- debug: msg={{gover}}
 
 - name: Download go tarball
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   get_url:
     url: "{{ go_download_url }}"
-    dest: "~/{{ env.code.go.tarball }}"
-    checksum: "{{ env.code.go.tarball_sha256 }}"
-  when: go_version.failed
-
-
-- name: Create XDG_DATA_DIR if not present
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
-  file:
-    path: "{{ env.code.go.GOPATH.parent }}"
-    state: directory
-    mode: 0755
-  when: not data_dir.stat.exists
-  
-
+    dest: "{{ xdg_data_dir }}/{{ go_tarball }}"
+    checksum: "{{ go_tarball_sha256 }}"
+  when: (gover.failed) or
+        (gover.stdout != go_version_target)
 
 - name: Delete old go binaries
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   file:
-    path: "{{ env.code.go.GOPATH.primary }}"
+    path: "{{ go_path_primary }}"
     state: absent
-  when: (go_version.failed == true) or
-        (go_version.stdout != env.code.go.version_target)
+  when: (gover.failed) or
+        (gover.stdout != go_version_target)
 
 
 - name: Extract go tarball if go isn't yet installed or desired version
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   unarchive:
-    src: "~/{{ env.code.go.tarball }}"
-    dest: "{{ env.code.go.GOPATH.parent }}"
+    src: "{{ xdg_data_dir }}/{{ go_tarball }}"
+    dest: "{{ xdg_data_dir }}"
     copy: no
-  when: (go_version.failed == true) or
-        (go_version.stdout != env.code.go.version_target)
+  when: (gover.failed == true) or
+        (gover.stdout != go_version_target)
 
 
 - name: Delete go tarball download if present
-  become: true
-  become_method: "{{ users.become_method }}"
-  become_user: "{{ users.main }}"
   file:
-    path: "~/{{ env.code.go.tarball }}"
+    path: "~/{{ go_tarball }}"
     state: absent

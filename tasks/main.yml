@@ -2,18 +2,23 @@
 # TODO instead of these complicated steps, use agent forwarding and only use the ssh link to the repo
 # TODO: Bash should be in here since it's an env thing & is needed before installing things like go/rust/nvm/npm/node
 ---
-- import_tasks: clone_dotfiles.yml
-  tags:
-    - dotfiles
+# - import_tasks: home_dirs.yml
+#   tags:
+#     - env
+#     - directory
+
+# - import_tasks: clone_dotfiles.yml
+#   tags:
+#     - dotfiles
 
 # - import_tasks: link_bash_dotfiles.yml
 #   tags:
 #     - dotfiles
 #     - bash
 
-- import_tasks: python_env.yml
-  tags:
-    - python
+# - import_tasks: python_env.yml
+#   tags:
+#     - python
 
 # - import_tasks: link_vim_dotfiles.yml
 #   tags:
@@ -53,10 +58,10 @@
 
 
 # TODO handle these later
-# - import_tasks: go.yml
-#   when: env.code.go.enable == true
-#
-#
+- import_tasks: go.yml
+  when: go_enable == true
+
+
 # - import_tasks: fzf.yml
 #   when: env.tools.fzf.enable == true
 #

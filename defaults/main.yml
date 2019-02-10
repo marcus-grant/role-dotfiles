@@ -1,17 +1,17 @@
 ---
 ###
+### defaults for xdg dirs, or home environment dirs
+###
+xdg_data_dir: "~/.local/share"
+xdg_config_dir: "~/.config"
+
+###
 ### defaults file for dotfiles
 ###
 dotfiles_root_path: "~/.dots"
 dotfiles_active_branch: master
 dotfiles_remote_user: marcus-grant
 dotfiles_should_update: true
-
-
-
-# env stuff, might need removing in future
-xdg_data_dir: "~/.local/share"
-xdg_config_dir: "~/.config"
 
 ###
 ### dotfile set specific variables
@@ -49,6 +49,17 @@ alacritty_dotfiles_dir_name: dots-alacritty
 ###
 ### Env configs
 ###
+
+# go
+go_enable: true
+go_set_path: false
+go_path_primary: "{{ xdg_data_dir }}/go"
+go_path_workspace: ~/code/go
+go_path_global: /usr/local/go
+go_tarball: go1.11.4.linux-amd64.tar.gz
+go_tarball_sha256: "sha256:fb26c30e6a04ad937bbc657a1b5bba92f80096af1e8ee6da6430c045a8db3a5b"
+go_version_target: "go version go1.11.4 linux/amd64"
+
 
 # nvm
 nvm_add_path_to_bashrc: false
