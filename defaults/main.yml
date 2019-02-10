@@ -89,6 +89,8 @@ nvm_npm_init_pkgs: []
 
 # python
 enable_python3_env: true
+cli_app_pip_deps:
+    - pynvim
 
 # computed variables DO NOT CHANGE THESE
 # TODO bash dotfiles should be able to work without prompt link
