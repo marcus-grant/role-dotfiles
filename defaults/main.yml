@@ -19,7 +19,7 @@ dotfiles_should_update: true
 
 # bash
 enable_bash: true
-bash_dotfiles_dir_name: dots-bash
+bash_dotfiles_dir_name: bash
 bash_repo_name: dots-bash
 bash_dotfiles_prompt_name: bash-powerline.sh
 bash_dotfiles_bashrc: bashrc
@@ -28,28 +28,28 @@ bash_dotfiles_bash_profile: bash_profile
 # vim
 enable_vim: true
 vim_repo_name: dots-vim
-vim_dotfiles_dir_name: dots-vim
+vim_dotfiles_dir_name: vim
 
 # neovim
 enable_neovim: true
 nvim_aliased_as_vim: false
 nvim_repo_name: dots-neovim
-nvim_dotfiles_dir_name: dots-neovim
+nvim_dotfiles_dir_name: neovim
 
 # tmux
 enable_tmux: true
 tmux_repo_name: dots-tmux
-tmux_dotfiles_dir_name: dots-tmux
+tmux_dotfiles_dir_name: tmux
 
 # alacritty
 enable_alacritty: true
 alacritty_repo_name: dots-alacritty
-alacritty_dotfiles_dir_name: dots-alacritty
+alacritty_dotfiles_dir_name: alacritty
 
 # i3
 enable_i3: true
 i3_repo_name: dots-i3
-i3_dotfiles_dir_name: dots-i3
+i3_dotfiles_dir_name: i3
 
 ###
 ### Env configs

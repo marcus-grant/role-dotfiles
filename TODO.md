@@ -38,6 +38,7 @@ Future
 - [ ] Implement go task that sets gopath on `set_go_path` being set
 - [ ] do better check on gobin being populated
 - [ ] Make sure $GOROOT is addressed in go install to root
+- [ ] Move all modifications into variables so anyone can use this
 - **Prefix all these remote repos with role-SOMEROLE**
 - [ ] Separate Go env into separate VCS'd role
 - [ ] Separate Rustup env into separate VCS'd role

@@ -9,15 +9,19 @@
   when: not repo_subdir_present.stat.exists
   block:
     - name: 'Clone dotfiles repo "{{ repo.remote }}"'
-      become: true
-      become_method: sudo
-      become_user: "{{ dotfiles_user }}"
       git:
         repo: "https://github.com/{{dotfiles_remote_user}}/{{repo.remote}}.git"
         dest: "{{ dotfiles_root_path }}/{{ repo.local_subdir }}"
+        # TODO should this be handled?
         # update: "{{ dotfiles_should_update }}"
         update: false
         version: "{{ dotfiles_active_branch }}"
+
+    # - debug: msg="mv {{ dotfiles_root_path }}/{{ repo.remote }} {{ dotfiles_root_path }}/{{ repo.local_subdir }}"
+
+    # - name: Rename dotfile to local name
+    #   command: mv {{ dotfiles_root_path }}/{{ repo.remote }} {{ dotfiles_root_path }}/{{ repo.local_subdir }}
+
 
     - name: Get fact for dotfiles remote
       become: true
