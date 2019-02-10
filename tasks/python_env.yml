@@ -10,6 +10,7 @@
     state: present
 
 - name: Install base (user) pip packages
-  pip: "{{ cli_app_pip_deps }}"
-  extra_args: --user
+  pip:
+    name: "{{ cli_app_pip_deps }}"
+    extra_args: --user
     
