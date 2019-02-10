@@ -1,8 +1,5 @@
 ---
 - name: Link tmux.conf to expected location
-  become: true
-  become_method: sudo
-  become_user: "{{ dotfiles_user }}"
   file:
     state: link
     src: "{{ tmux_dotfiles_root_path }}/.tmux.conf"
@@ -10,9 +7,6 @@
     force: true
 
 - name: Link tmux.conf.local to expected location
-  become: true
-  become_method: sudo
-  become_user: "{{ dotfiles_user }}"
   file:
     state: link
     src: "{{ tmux_dotfiles_root_path }}/.tmux.conf.local"
