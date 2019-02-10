@@ -1,0 +1,7 @@
+---
+- name: Link i3 directory to expected location
+  file:
+    state: link
+    src: "{{ i3_dotfiles_root_path }}"
+    dest: ~/.config/i3
+    force: true

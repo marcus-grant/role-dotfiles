@@ -1,9 +1,6 @@
 TODOs
 =====
 
-- [ ] Create filtered repo for i3 dotfiles
-- [ ] Update clone repos task to clone i3 properly
-- [ ] Create `link_i3_dotfiles` task
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Create proper role metadata
 - [ ] Add task to prepare_remote_dots to change installed directory
@@ -53,7 +50,10 @@ Future
 Completed
 =========
 
-- [x] Add cargo installs for fd rg ``
+- [x] Create filtered repo for i3 dotfiles
+- [x] Update clone repos task to clone i3 properly
+- [x] Create `link_i3_dotfiles` task
+- [x] Add cargo installs for fd rg `4f5f344`
 - [x] Make rustup env setup work `04a2871`
 - [x] Make fzf env setup work `e5ae622`
 - [x] Make go env setup work `6774a58`

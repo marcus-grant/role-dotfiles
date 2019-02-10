@@ -46,6 +46,11 @@ enable_alacritty: true
 alacritty_repo_name: dots-alacritty
 alacritty_dotfiles_dir_name: dots-alacritty
 
+# i3
+enable_i3: true
+i3_repo_name: dots-i3
+i3_dotfiles_dir_name: dots-i3
+
 ###
 ### Env configs
 ###
@@ -96,3 +101,5 @@ nvim_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ nvim_dotfiles_dir_name }}"
 tmux_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ tmux_dotfiles_dir_name }}"
 
 alacritty_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ alacritty_dotfiles_dir_name }}"
+
+i3_dotfiles_root_path: "{{ dotfiles_root_path }}/{{ i3_dotfiles_dir_name }}"

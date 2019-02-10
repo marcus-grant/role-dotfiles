@@ -3,42 +3,31 @@
 # TODO: Bash should be in here since it's an env thing & is needed before installing things like go/rust/nvm/npm/node
 ---
 # - import_tasks: home_dirs.yml
-#   tags:
-#     - env
-#     - directory
+#   tags: [xdg, home, dirs, env]
 
-# - import_tasks: clone_dotfiles.yml
-#   tags:
-#     - dotfiles
+- import_tasks: clone_dotfiles.yml
+  tags: [clone, dotfiles]
 
 # - import_tasks: link_bash_dotfiles.yml
-#   tags:
-#     - dotfiles
-#     - bash
+#   tags: [bash]
 
 # - import_tasks: python_env.yml
-#   tags:
-#     - python
+#   tags: [python, pip]
 
 # - import_tasks: link_vim_dotfiles.yml
-#   tags:
-#     - dotfiles
-#     - vim
+#   tags: [vim]
 
 # - import_tasks: link_neovim_dotfiles.yml
-#   tags:
-#     - dotfiles
-#     - neovim
-#
+#   tags: [neovim]
+
 # - import_tasks: link_tmux_dotfiles.yml
-#   tags:
-#     - dotfiles
-#     - tmux
-#
+#   tags: [tmux]
+
 # - import_tasks: link_alacritty_dotfiles.yml
-#   tags:
-#     - dotfiles
-#     - alacritty
+#   tags: [alacritty]
+
+- import_tasks: link_i3_dotfiles.yml
+  tags: [i3, wm, desktop_environment]
 
 # - import_tasks: nvm.yml
 #   tags:
@@ -72,6 +61,6 @@
 #   when: rust_enable
 #   tags: [rustup, cargo, env, install]
 
-- import_tasks: rust_dotfiles_utils.yml
-  when: rust_enable
-  tags: [cargo, cli]
+# - import_tasks: rust_dotfiles_utils.yml
+#   when: rust_enable
+#   tags: [cargo, cli]
