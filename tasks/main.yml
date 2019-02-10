@@ -8,59 +8,57 @@
 - import_tasks: clone_dotfiles.yml
   tags: [clone, dotfiles]
 
-# - import_tasks: link_bash_dotfiles.yml
-#   tags: [bash]
+- import_tasks: link_bash_dotfiles.yml
+  when: enable_bash
+  tags: [bash]
 
-# - import_tasks: python_env.yml
-#   tags: [python, pip]
+- import_tasks: python_env.yml
+  when: enable_python3_env
+  tags: [python, pip]
 
-# - import_tasks: link_vim_dotfiles.yml
-#   tags: [vim]
+- import_tasks: link_vim_dotfiles.yml
+  when: enable_vim
+  tags: [vim]
 
-# - import_tasks: link_neovim_dotfiles.yml
-#   tags: [neovim]
+- import_tasks: link_neovim_dotfiles.yml
+  when: enable_neovim
+  tags: [neovim]
 
-# - import_tasks: link_tmux_dotfiles.yml
-#   tags: [tmux]
+- import_tasks: link_tmux_dotfiles.yml
+  when: enable_tmux
+  tags: [tmux]
 
-# - import_tasks: link_alacritty_dotfiles.yml
-#   tags: [alacritty]
+- import_tasks: link_alacritty_dotfiles.yml
+  when: enable_alacritty
+  tags: [alacritty]
 
 - import_tasks: link_i3_dotfiles.yml
+  when: enable_i3
   tags: [i3, wm, desktop_environment]
 
-# - import_tasks: nvm.yml
-#   tags:
-#     - dev_env
-#     - nvm
-#
-# - include: nvm_permissions.yml
-#   tags:
-#     - dev_env
-#     - nvm
-#
-# - import_tasks: node.yml
-#   tags:
-#     - dev_env
-#     - node
+- import_tasks: nvm.yml
+  when: enable_nvm
+  tags: [env, dev, nvm]
 
+- include: nvm_permissions.yml
+  when: enable_nvm
+  tags: [env, dev, nvm]
 
+- import_tasks: node.yml
+  tags: [env, dev, node, nvm]
 
-# TODO handle these later
-# - import_tasks: go.yml
-#   when: go_enable
-#   tags: [go, install, env]
+- import_tasks: go.yml
+  when: go_enable
+  tags: [go, install, env]
 
+- import_tasks: fzf.yml
+  when: fzf_enable
+  tags: [fzf, cli]
 
-# - import_tasks: fzf.yml
-#   when: fzf_enable
-#   tags: [fzf, cli]
+- import_tasks: rustup.yml
+  when: rust_enable
+  tags: [rustup, cargo, env, install]
 
-
-# - import_tasks: rustup.yml
-#   when: rust_enable
-#   tags: [rustup, cargo, env, install]
-
-# - import_tasks: rust_dotfiles_utils.yml
-#   when: rust_enable
-#   tags: [cargo, cli]
+- import_tasks: rust_dotfiles_utils.yml
+  when: rust_enable
+  tags: [cargo, cli]

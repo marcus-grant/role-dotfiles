@@ -3,7 +3,7 @@ TODOs
 
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Create proper role metadata
-- [ ] Add task to prepare_remote_dots to change installed directory
+- [ ] Create linker task that takes list from main to prep dots
 - [ ] Change `prepare_remote_dotfiles` to `clone_dotfiles`
 - [ ] Add pip3 user installs including:
     - [ ] ansible-lint
@@ -50,9 +50,9 @@ Future
 Completed
 =========
 
-- [x] Create filtered repo for i3 dotfiles
-- [x] Update clone repos task to clone i3 properly
-- [x] Create `link_i3_dotfiles` task
+- [x] Create filtered repo for i3 dotfiles `eb1ac46`
+- [x] Update clone repos task to clone i3 properly `eb1ac46`
+- [x] Create `link_i3_dotfiles` task `eb1ac46`
 - [x] Add cargo installs for fd rg `4f5f344`
 - [x] Make rustup env setup work `04a2871`
 - [x] Make fzf env setup work `e5ae622`

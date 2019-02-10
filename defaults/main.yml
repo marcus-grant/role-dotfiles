@@ -18,7 +18,7 @@ dotfiles_should_update: true
 ###
 
 # bash
-enable_bash_dotfiles: true
+enable_bash: true
 bash_dotfiles_dir_name: dots-bash
 bash_repo_name: dots-bash
 bash_dotfiles_prompt_name: bash-powerline.sh
@@ -78,6 +78,7 @@ rust_enable: true
 cargo_path: ~/.cargo
 
 # nvm
+enable_nvm: true
 nvm_add_path_to_bashrc: false
 nvm_version: "v0.34.0"
 nvm_node_version: "11.9.0"
@@ -85,9 +86,9 @@ nvm_working_path: "/home/{{ dotfiles_user }}"
 nvm_dest: "{{ nvm_working_path }}/.local/share/nvm"
 nvm_npm_init_pkgs: []
 # nvm_required_packages: # TODO git curl libssl-dev necessary?
-  
 
-
+# python
+enable_python3_env: true
 
 # computed variables DO NOT CHANGE THESE
 # TODO bash dotfiles should be able to work without prompt link
