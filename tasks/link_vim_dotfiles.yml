@@ -1,8 +1,5 @@
 ---
 - name: Link vimrc to expected location
-  become: true
-  become_method: sudo
-  become_user: "{{ dotfiles_user }}"
   file:
     state: link
     src: "{{ vim_dotfiles_root_path }}/vimrc"
@@ -10,9 +7,6 @@
     force: true
 
 - name: Link vim dir to expected location (home)
-  become: true
-  become_method: sudo
-  become_user: "{{ dotfiles_user }}"
   file:
     state: link
     src: "{{ vim_dotfiles_root_path }}"
