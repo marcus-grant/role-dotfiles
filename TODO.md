@@ -1,6 +1,7 @@
 TODOs
 =====
 
+- [ ] For some reason fzf variables & defaults aren't working, fix!
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Create proper role metadata
 - [ ] Create linker task that takes list from main to prep dots
