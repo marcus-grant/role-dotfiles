@@ -47,6 +47,8 @@ cd - # go back to the previous location
 ```sh
 cd .. && ansible localhost -m include_role -a name=dotfiles --extra-vars dotfiles_user=marcus; cd -
 ```
+- **UPDATE** Now you can do the same with `test_role_locally.sh`
+    - Just add a text file that's ignored `role_username.txt` with the system username this is being run on to easily test everything.
 
 - This will move back a dir then run the test command and then go back again
 

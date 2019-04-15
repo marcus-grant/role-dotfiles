@@ -22,6 +22,7 @@ enable_bash: true
 bash_dotfiles_dir_name: bash
 bash_repo_name: dots-bash
 bash_dotfiles_prompt_name: bash-powerline.sh
+bash_dotfiles_profile: profile
 bash_dotfiles_bashrc: bashrc
 bash_dotfiles_bash_profile: bash_profile
 

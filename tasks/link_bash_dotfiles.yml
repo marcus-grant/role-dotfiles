@@ -6,6 +6,14 @@
     dest: "{{ bash_dotfiles_root_path }}/prompts/prompt-link"
     force: true
 
+- name: Link bash\'s \"profile\" to expected location
+  file:
+    state: link
+    src: "{{ bash_dotfiles_root_path }}/{{ bash_dotfiles_profile }}"
+    dest: ~/.profile
+    force: true
+
+
 - name: Link bashrc to expected location
   file:
     state: link
