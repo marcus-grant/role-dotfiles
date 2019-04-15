@@ -2,6 +2,7 @@ TODOs
 =====
 
 - [ ] For some reason fzf variables & defaults aren't working, fix!
+- [ ] The bash env for remote ansible clients need to source the new bash config before continuing, some tasks need the updated `PATH` variable to function (cargo stuff)
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Create proper role metadata
 - [ ] Create linker task that takes list from main to prep dots
