@@ -1,7 +1,8 @@
 #! /bin/bash
 
 # First some vars to change for each system
-roleName="dotfiles" # only change if on diff role
+# roleName="dotfiles" # only change if on diff role
+roleName="role-dotfiles"
 dotfilesUser="$(cat role_username.txt)"
 
 # First move backwards to treat role by its directory structure

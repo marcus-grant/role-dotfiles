@@ -47,17 +47,17 @@
 - import_tasks: node.yml
   tags: [env, dev, node, nvm]
 
-- import_tasks: go.yml
-  when: go_enable
-  tags: [go, install, env]
+# - import_tasks: go.yml
+#   when: go_enable
+#   tags: [go, install, env]
 
 - import_tasks: fzf.yml
   when: fzf_enable
   tags: [fzf, cli]
 
-- import_tasks: rustup.yml
-  when: rust_enable
-  tags: [rustup, cargo, env, install]
+# - import_tasks: rustup.yml
+#   when: rust_enable
+#   tags: [rustup, cargo, env, install]
 
 - import_tasks: rust_dotfiles_utils.yml
   when: rust_enable

@@ -1,7 +1,9 @@
 TODOs
 =====
 
-- [ ] For some reason fzf variables & defaults aren't working, fix!
+- [ ] Consider creating a standardized place for custom binaries like `~/.local/bin` or `~/bin`
+- [ ] Consider downloading and untarring [junegunn/fzf-bin](http://bit.ly/2l7rgmv) instead to simplify conflicts with `GOPATH` & goenv
+- [ ] for some reason fzf variables & defaults aren't working, fix!
 - [ ] The bash env for remote ansible clients need to source the new bash config before continuing, some tasks need the updated `PATH` variable to function (cargo stuff)
 - [ ] Make use of dotfile set enable var in `clone_dotfiles`
 - [ ] Create proper role metadata
