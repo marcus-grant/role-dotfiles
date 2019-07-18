@@ -2,8 +2,8 @@
 ###
 ### defaults for xdg dirs, or home environment dirs
 ###
-xdg_data_dir: "~/.local/share"
-xdg_config_dir: "~/.config"
+xdg_data_home: "~/.local/share"
+xdg_config_home: "~/.config"
 
 ###
 ### defaults file for dotfiles
@@ -59,7 +59,7 @@ i3_dotfiles_dir_name: i3
 # go
 go_enable: true
 go_set_path: false
-go_path_primary: "{{ xdg_data_dir }}/go"
+go_path_primary: "{{ xdg_data_home }}/go"
 go_path_workspace: ~/code/go
 go_path_global: /usr/local/go
 go_tarball: go1.11.4.linux-amd64.tar.gz
@@ -69,7 +69,7 @@ go_version_target: "go version go1.11.4 linux/amd64"
 # fzf
 fzf_enable: true
 fzf_version: 0.17.5
-fzf_root_parent: "{{ xdg_data_dir }}"
+fzf_root_parent: "{{ xdg_data_home }}"
 fzf_root_path: "{{ fzf_root_parent }}/fzf"
 # TODO consider implementing fzf install using pkg.mgr.
 fzf_use_pkg_mgr: false

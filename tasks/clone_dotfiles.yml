@@ -5,15 +5,15 @@
     state: directory
     mode: 0755
 
-- name: "Ensure XDG_DATA_DIR ({{ xdg_data_dir }}) present"
+- name: "Ensure xdg_data_home ({{ xdg_data_home }}) present"
   file:
-    path: "{{ xdg_data_dir }}"
+    path: "{{ xdg_data_home }}"
     state: directory
     mode: 0755
 
-- name: "Ensure XDG_CONFIG_DIR ({{ xdg_config_dir }}) present"
+- name: "Ensure xdg_config_home ({{ xdg_config_home }}) present"
   file:
-    path: "{{ xdg_config_dir }}"
+    path: "{{ xdg_config_home }}"
     state: directory
     mode: 0755
 

@@ -16,7 +16,7 @@
 - name: Download go tarball
   get_url:
     url: "{{ go_download_url }}"
-    dest: "{{ xdg_data_dir }}/{{ go_tarball }}"
+    dest: "{{ xdg_data_home }}/{{ go_tarball }}"
     checksum: "{{ go_tarball_sha256 }}"
   when: (gover.failed) or
         (gover.stdout != go_version_target)
@@ -31,8 +31,8 @@
 
 - name: Extract go tarball if go isn't yet installed or desired version
   unarchive:
-    src: "{{ xdg_data_dir }}/{{ go_tarball }}"
-    dest: "{{ xdg_data_dir }}"
+    src: "{{ xdg_data_home }}/{{ go_tarball }}"
+    dest: "{{ xdg_data_home }}"
     copy: no
   when: (gover.failed == true) or
         (gover.stdout != go_version_target)
