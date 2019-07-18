@@ -6,6 +6,18 @@
     dest: ~/.vimrc
     force: true
 
+- name: Check if default vim directory exists (not as link)
+  stat:
+    path: ~/.vim
+  register: default_vim_dir
+
+- name: Delete default ~/.vim dir if it exists
+  file:
+    path: ~/.vim
+    state: absent
+  when: default_vim_dir.stat.exists and default_vim_dir.stat.isdir
+
+
 - name: Link vim dir to expected location (home)
   file:
     state: link
