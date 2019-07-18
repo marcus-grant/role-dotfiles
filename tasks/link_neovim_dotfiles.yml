@@ -3,5 +3,5 @@
   file:
     state: link
     src: "{{ nvim_dotfiles_root_path }}"
-    dest: "{{ xdg_config_dir }}/nvim"
+    dest: "{{ xdg_config_home }}/nvim"
     force: true

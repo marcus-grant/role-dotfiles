@@ -1,12 +1,12 @@
 ---
-- name: "Create XDG_DATA_DIR {{ xdg_data_dir }}"
+- name: "Create XDG_DATA_HOME {{ xdg_data_home }}"
   file:
-    path: "{{ xdg_data_dir }}"
+    path: "{{ xdg_data_home }}"
     state: directory
     mode: 0755
 
-- name: "Create XDG_CONFIG_DIR {{ xdg_config_dir }}"
+- name: "Create XDG_CONFIG_HOME {{ xdg_config_home }}"
   file:
-    path: "{{ xdg_config_dir }}"
+    path: "{{ xdg_config_home }}"
     state: directory
     mode: 0755
