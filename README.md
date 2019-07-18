@@ -34,7 +34,12 @@ Including an example of how to use your role (for instance, with variables passe
 Notes
 -----
 
-To use this role by itself for simply runs or for testing, use this command: [1][01]
+- Notes for future fixes
+  - `xdg_data_dirs` isn't the right variable name for `$HOME/.local/share`
+    - The [spec][03] for this states that it is `$XDG_DATA_HOME`
+    - This should be set as a variable in the future
+
+To use this role by itself for simple runs or for testing, use this command: [1][01]
 
 ```sh
 cd .. # Go to the root of the roles, but this needs to be done outside the role root
@@ -95,6 +100,8 @@ References
 
 1. [Stack Overflow: Executing single roles][01]
 2. [Github: moviedo/ansible-role-vnm][02]
+3. [freedesktop.org: XDG Base Directory Specification][03]
 
-01: http://bit.ly/2G1T0QE "Stack Overflow: Executing single roles"
-02: http://bit.ly/2G5Z8Hy "Github: moviedo/ansible-role-vnm"
+[01]: http://bit.ly/2G1T0QE "Stack Overflow: Executing single roles"
+[02]: http://bit.ly/2G5Z8Hy "Github: moviedo/ansible-role-vnm"
+[03]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html "freedesktop.org: XDG Base Directory Specification"
